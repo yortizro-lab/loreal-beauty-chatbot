@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="L'Oréal Beauty Guide AI beauty assistant.">
+  <title>L'Oréal Beauty Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <a class="brand-logo" href="#" aria-label="L'Oréal Paris Beauty Guide">
+      <span class="brand-name">L'ORÉAL</span>
+      <span class="brand-paris">PARIS</span>
+    </a>
+
+    <div class="header-label">
+      <span class="header-guide" data-i18n="headerGuide">BEAUTY GUIDE</span>
+      <span class="header-assistant" data-i18n="headerAssistant">
+        AI ASSISTANT
+      </span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow" data-i18n="eyebrow">DISCOVER YOUR BEAUTY</p>
+      <h1 data-i18n="heroTitle">Beauty begins with you.</h1>
+      <p data-i18n="heroDescription">
+        Explore personalized skincare, makeup, and haircare
+        recommendations with your AI beauty assistant.
+      </p>
+      <div class="gold-line"></div>
+    </section>
+
+    <section class="chat-container">
+      <div class="chat-header">
+        <div class="assistant-avatar">L</div>
+        <div class="assistant-info">
+          <h2 data-i18n="guideName">Beauty Guide</h2>
+          <p data-i18n="guideDescription">Your personal beauty assistant</p>
+        </div>
+        <div class="chat-actions">
+          <span class="online" data-i18n="online">● Online</span>
+          <button
+            type="button"
+            id="refreshButton"
+            class="refresh-button"
+            aria-label="Refresh chat"
+            title="Refresh chat"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 7v5h-5M4 17v-5h5"></path>
+              <path d="M5.6 9a7 7 0 0 1 11.6-2L20 12M4 12l2.8 5a7 7 0 0 0 11.6-2"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="chatMessages" class="chat-messages">
+        <div class="message bot" id="welcomeMessage" data-i18n-html="welcome">
+          Welcome to Beauty Guide! ✨
+          <br><br>
+          I'm here to help you explore skincare,
+          makeup, and haircare. What would you
+          like to discover today?
+        </div>
+      </div>
+
+      <form id="chatForm" class="chat-form">
+        <select
+          id="languageSelect"
+          class="language-select"
+          aria-label="Response language"
+        >
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="zh">中文</option>
+          <option value="pt">Português</option>
+        </select>
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Ask your beauty question..."
+          autocomplete="off"
+          required
+        >
+        <button type="submit" id="sendButton" data-i18n="send">
+          SEND →
+        </button>
+      </form>
+
+      <p class="chat-note" data-i18n="note">
+        AI-generated beauty guidance. Always check official product information.
+      </p>
+    </section>
+
+    <footer>
+      <p data-i18n="footerMotto">BEAUTY • SCIENCE • INNOVATION</p>
+      <p data-i18n="footerDisclaimer">
+        Independent AI demonstration project. Not affiliated with L'Oréal.
+      </p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
