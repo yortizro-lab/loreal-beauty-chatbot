@@ -218,7 +218,14 @@ if (
     chatMessages.scrollTop = chatMessages.scrollHeight;
     return message;
   }
+function formatMarkdown(text) {
+  const escaped = String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 
+ return escaped.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+}
   function labelMessageWithText(message, sender, text) {
     message.replaceChildren();
 
@@ -229,7 +236,7 @@ if (
 
     const body = document.createElement("span");
     body.className = "message-text";
-    body.textContent = text;
+    body.innerHTML = formatMarkdown(text);
     message.appendChild(body);
     message.dataset.sender = sender;
   }
